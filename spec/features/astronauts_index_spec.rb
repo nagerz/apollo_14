@@ -57,4 +57,18 @@ RSpec.describe 'when visitor visits astronauts index', type: :feature do
       expect(page).to_not have_content("#{@mission_3.title}")
     end
   end
+
+  it 'can see all astronauts total time in space' do
+    visit astronauts_path
+
+    within "#astronaut-#{@astronaut_1.id}" do
+      expect(page).to have_content("Total time in space: #{@astronaut_1.space_time}")
+    end
+    within "#astronaut-#{@astronaut_2.id}" do
+      expect(page).to have_content("Total time in space: #{@astronaut_2.space_time}")
+    end
+    within "#astronaut-#{@astronaut_3.id}" do
+      expect(page).to have_content("Total time in space: #{@astronaut_3.space_time}")
+    end
+  end
 end

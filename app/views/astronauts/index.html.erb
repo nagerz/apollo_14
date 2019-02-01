@@ -7,6 +7,7 @@
     <h3>Name: <%= astronaut.name %></h3>
     <p>Age: <%= astronaut.age %></p>
     <p>Job: <%= astronaut.job %></p>
+    <p>Total time in space: <%= astronaut.space_time %></p>
     <section id="astronaut-<%= astronaut.id %>-missions">
       <h3>Missions:%></h3>
       <% astronaut.missions.each do |mission| %>
